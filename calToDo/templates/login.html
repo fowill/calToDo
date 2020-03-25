@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+<p>你已经登录啦！</p>
+<a href="../">点我返回</a>
+<p>
+{% else %}
+  <h2 class="text-center">你还没登陆呢，弟弟/妹妹，赶紧登录</h2>
+  <a href="../admin">点我登录</a>
+
+<p> 不开放注册？那当然，快加入数据分析兴趣小组吧！</p>
+{% endif %}
