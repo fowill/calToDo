@@ -33,7 +33,6 @@ def del_view(request, id):
     if request.method == "POST":
         a_id = request.POST["id"]
         Thing.objects.filter(id=a_id).delete()
-        print('render')
         return redirect('../../home')
 
 def edit_view(request,id):
@@ -43,7 +42,15 @@ def edit_view(request,id):
         except Thing.DoesNotExist:
             raise Http404
         return render(request,'edit.html',{'post':post})
-        
+
+    if request.method == "POST":
+        a_id = request.POST["id"]
+        a_thing = Thing.objects.get(id=str(a_id))
+        a_thing.title = request.POST["title"]
+        a_thing.name = request.POST["name"]
+        a_thing.status = request.POST["status"]
+        a_thing.save()
+        return redirect('../../home')        
 
 
 

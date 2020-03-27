@@ -20,8 +20,8 @@
                 <td class="post-author">{{ post.name }}</td>
                 <td class="post-category post-category-js">{{ post.date_time }}</td>
                 <td>{{ post.status }}</td>
-                <td><button type="button" class="btn btn-primary">修改</button></td>
-                <td><a class="btn btn-danger" href="{{ post.get_absolute_url }}">删除</a></td>
+                <td><a class="btn btn-primary" href = "{{ post.get_absolute_url2 }}">修改</a></td>
+                <td><a class="btn btn-danger" href="{{ post.get_absolute_url1 }}">删除</a></td>
             	</tr>			
     {% endfor %}
 </tbody>

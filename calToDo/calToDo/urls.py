@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.conf.urls import url
-from todo.views import home_view,new_view,del_view,final_del_view
+from todo.views import home_view,new_view,del_view,edit_view
 from login.views import login_view,logout_view
 
 urlpatterns = [
@@ -27,5 +27,6 @@ urlpatterns = [
     path('login/',login_view),
     path('logout/',logout_view),
     path('add/',new_view),
-    path('del/<int:id>',del_view, name='thing-id'),
+    path('del/<int:id>',del_view, name='thing-id1'),
+    path('edit/<int:id>',edit_view, name='thing-id2'),
 ]

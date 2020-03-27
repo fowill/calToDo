@@ -16,6 +16,8 @@ class Thing(models.Model) :
     class Meta:  #按时间下降排序
         ordering = ['-date_time']
 
-    def get_absolute_url(self):
-    	return reverse("thing-id", kwargs={"id": self.id})
+    def get_absolute_url1(self):
+    	return reverse("thing-id1", kwargs={"id": self.id})
     
+    def get_absolute_url2(self):
+        return reverse("thing-id2", kwargs={"id": self.id})
