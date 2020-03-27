@@ -21,10 +21,11 @@
                 <td class="post-category post-category-js">{{ post.date_time }}</td>
                 <td>{{ post.status }}</td>
                 <td><button type="button" class="btn btn-primary">修改</button></td>
-                <td><button class="btn btn-danger">删除</button></td>
+                <td><a class="btn btn-danger" href="{{ post.get_absolute_url }}">删除</a></td>
             	</tr>			
     {% endfor %}
 </tbody>
 </table>
-</div><!-- /.blog-post -->
+</div>
+<a class="btn btn-success" href="../add">新增</a>
 {% endblock %}

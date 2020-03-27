@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.conf.urls import url
-from todo.views import home_view
-from login.views import login_view,login_check_view
+from todo.views import home_view,new_view,del_view,final_del_view
+from login.views import login_view,logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',home_view),
     path('',home_view),
-    path('login/',login_view)
+    path('login/',login_view),
+    path('logout/',logout_view),
+    path('add/',new_view),
+    path('del/<int:id>',del_view, name='thing-id'),
 ]

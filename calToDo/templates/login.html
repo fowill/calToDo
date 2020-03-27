@@ -3,8 +3,18 @@
 <a href="../">点我返回</a>
 <p>
 {% else %}
-  <h2 class="text-center">你还没登陆呢，弟弟/妹妹，赶紧登录</h2>
-  <a href="../admin">点我登录</a>
+  <h3 class="text-center">赶紧登录，看看你还有多少ddl吧！</h3>
+  <form method="post">
+    {% csrf_token %}
+    用户名:<br/>
+    <input type="text" name="username">
+    <br/>
+    密码:<br/>
+    <input type="password" name="password">
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
 
-<p> 不开放注册？那当然，快加入数据分析兴趣小组吧！</p>
+<p> 不开放注册？那当然，快加入上大管院数据分析兴趣小组吧！</p>
 {% endif %}
+

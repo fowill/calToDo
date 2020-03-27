@@ -17,4 +17,5 @@ class Thing(models.Model) :
         ordering = ['-date_time']
 
     def get_absolute_url(self):
-    	return reverse("article-detail", kwargs={"id": self.id})
+    	return reverse("thing-id", kwargs={"id": self.id})
+    
