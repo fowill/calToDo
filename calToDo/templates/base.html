@@ -38,9 +38,9 @@
       <ol class="breadcrumb">
         <li><a href='/'>首页</a></li>
         <li><a href='/login'>登录状态</a></li>
-      </ol>
+        <li><a href='/comments'>建议收集板</a></li>
     </div>
-    <h1 style="text-align:center">数据分析兴趣小组-任务记录单v0.1</h1>
+    <h1 style="text-align:center">数据分析兴趣小组-任务记录单v0.2</h1>
     <br/>
     <p>尊贵的小组成员您好，欢迎来看您还有多少任务没做完并感到愧疚</p>
     <div class="col-sm-8 blog-main">
@@ -50,14 +50,17 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset",>
             <h4>作者语案</h4>  
-            <p>太丑了太丑了太丑了太丑了太丑了太丑了太丑了</p>
+            <p>欢迎大家积极提出建议！</p>
+            {% if user.is_authenticated %}
+            <a href="../comments">我要提建议</a>
+            {% endif %}
             <h4>登录状态</h4>
             {% if user.is_authenticated %}
             <p>你已经登录啦,欢迎尊贵的：{{ user.get_username }}</p>
             <a href="../logout">注销</a>
             {% else %}
               <p>你还没登陆呢，pong友，赶紧登录</p>
-              <a>
+              <a/>
               <a href="../login">点我登录</a>
             {% endif %}
           </div>     

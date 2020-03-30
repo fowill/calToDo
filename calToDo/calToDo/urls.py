@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf.urls import url
 from todo.views import home_view,new_view,del_view,edit_view
 from login.views import login_view,logout_view
+from comment.views import comment_view,add_comment_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,6 @@ urlpatterns = [
     path('add/',new_view),
     path('del/<int:id>',del_view, name='thing-id1'),
     path('edit/<int:id>',edit_view, name='thing-id2'),
+    path('comments/',comment_view),
+    path('add_comment/',add_comment_view)
 ]

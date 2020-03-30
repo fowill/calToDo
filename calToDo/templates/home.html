@@ -20,8 +20,13 @@
                 <td class="post-author">{{ post.name }}</td>
                 <td class="post-category post-category-js">{{ post.date_time }}</td>
                 <td>{{ post.status }}</td>
+                {% if post.name == user.username or user.username == 'fowillwly'%}
                 <td><a class="btn btn-primary" href = "{{ post.get_absolute_url2 }}">修改</a></td>
                 <td><a class="btn btn-danger" href="{{ post.get_absolute_url1 }}">删除</a></td>
+                {% else %}
+                <td><a class="post-author">无权修改</a></td>
+                <td><a class="post-author">无权删除</a></td>  
+                {% endif %}
             	</tr>			
     {% endfor %}
 </tbody>
