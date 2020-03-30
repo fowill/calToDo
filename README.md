@@ -1,1 +1,1 @@
-This is a online to-do list created by Django
+This is an online to-do list created by Django.
